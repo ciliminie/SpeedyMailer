@@ -9,8 +9,6 @@ from random import choice
 from colorama import Fore, init
 from email.message import EmailMessage
 import html
-from unidecode import unidecode
-from progress.bar import Bar
 from tqdm import tqdm
 import keyboard
 
@@ -29,14 +27,7 @@ def banner():
 
     email_send_count = 0
     # Iterate through the email list
-    for email in email_list:
-        result = send(email)
-        if result is not None:
-            email_send_count += 1
-            bar.next()
-        time.sleep(int(delay_time))
-    bar.finish()
-    print(f"\n\n [+] Sent {email_send_count} out of {email_count} emails successfully.")
+
 
 
 
